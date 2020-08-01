@@ -1,11 +1,15 @@
 package dev.withajoint.yace.init;
 
+import dev.withajoint.yace.util.Side;
+
 public abstract class BitboardInitializer {
 
     private static final int NUMBER_OF_PLAYERS = 2;
 
     protected final long[] pawnsPositions, knightsPositions, bishopsPositions,
             rooksPositions, queenPositions, kingPositions;
+
+    private final long[] allPiecesPositions;
 
     protected BitboardInitializer() {
         pawnsPositions = new long[NUMBER_OF_PLAYERS];
@@ -15,9 +19,18 @@ public abstract class BitboardInitializer {
         queenPositions = new long[NUMBER_OF_PLAYERS];
         kingPositions = new long[NUMBER_OF_PLAYERS];
         init();
+        allPiecesPositions = new long[NUMBER_OF_PLAYERS];
+        groupPiecesPositionsBySide();
     }
 
     protected abstract void init();
+
+    private void groupPiecesPositionsBySide() {
+        for (int side = Side.WHITE; side <= Side.BLACK; side++) {
+            allPiecesPositions[side] = pawnsPositions[side] | knightsPositions[side] | bishopsPositions[side]
+                    | rooksPositions[side] | queenPositions[side] | kingPositions[side];
+        }
+    }
 
     public long getPawnsPositionsAs(int side) {
         return pawnsPositions[side];
@@ -41,5 +54,9 @@ public abstract class BitboardInitializer {
 
     public long getKingPositionsAs(int side) {
         return kingPositions[side];
+    }
+
+    public long getAllPiecesPositionsAs(int side) {
+        return allPiecesPositions[side];
     }
 }

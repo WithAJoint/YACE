@@ -33,7 +33,6 @@ public final class StandardChessInitializer extends BitboardInitializer {
                 0b00000000_00000000_00000000_00000000_00000000_00000000_00000000_00001000L;
         kingPositions[Side.BLACK] =
                 0b00001000_00000000_00000000_00000000_00000000_00000000_00000000_00000000L;
-
     }
 
 }

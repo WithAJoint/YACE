@@ -1,2 +1,3 @@
 # Yet Another Chess Engine
-Too early to show something meaningful in here.
+
+Current status: coding board representation. 
