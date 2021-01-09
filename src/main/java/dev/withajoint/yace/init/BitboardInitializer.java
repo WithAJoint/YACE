@@ -32,31 +32,31 @@ public abstract class BitboardInitializer {
         }
     }
 
-    public long getPawnsPositionsAs(int side) {
+    public long getPawnsPositionAs(int side) {
         return pawnsPositions[side];
     }
 
-    public long getKnightsPositionsAs(int side) {
+    public long getKnightsPositionAs(int side) {
         return knightsPositions[side];
     }
 
-    public long getBishopsPositionsAs(int side) {
+    public long getBishopsPositionAs(int side) {
         return bishopsPositions[side];
     }
 
-    public long getRooksPositionsAs(int side) {
+    public long getRooksPositionAs(int side) {
         return rooksPositions[side];
     }
 
-    public long getQueenPositionsAs(int side) {
+    public long getQueenPositionAs(int side) {
         return queenPositions[side];
     }
 
-    public long getKingPositionsAs(int side) {
+    public long getKingPositionAs(int side) {
         return kingPositions[side];
     }
 
-    public long getAllPiecesPositionsAs(int side) {
+    public long getPositionAs(int side) {
         return allPiecesPositions[side];
     }
 }

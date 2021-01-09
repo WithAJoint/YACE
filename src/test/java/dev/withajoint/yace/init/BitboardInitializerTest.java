@@ -19,7 +19,7 @@ public class BitboardInitializerTest {
             }
         };
 
-        long whitePieces = initializer.getAllPiecesPositionsAs(Side.WHITE);
+        long whitePieces = initializer.getPositionAs(Side.WHITE);
 
         assert whitePieces == 0b00111111;
     }
@@ -38,7 +38,7 @@ public class BitboardInitializerTest {
             }
         };
 
-        long blackPieces = initializer.getAllPiecesPositionsAs(Side.BLACK);
+        long blackPieces = initializer.getPositionAs(Side.BLACK);
 
         assert blackPieces == 0b00111110;
     }
